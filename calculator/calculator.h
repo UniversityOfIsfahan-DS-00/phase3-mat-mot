@@ -32,9 +32,16 @@ public:
     bool isopr (QString input ) ;
     bool ismatch (QString input ) ;
     double calculate (QList<QString> postfix) ;
+    QString postfixtoinfix (QList<QString> postfix) ;
 private slots:
 
     void on_equalbtn_pressed();
+
+   // void on_stepbystepboxbtn_clicked(bool checked);
+
+    void on_stepbystepboxbtn_pressed();
+
+    void on_stepbystepboxbtn_clicked();
 
 private:
     Ui::calculator *ui;

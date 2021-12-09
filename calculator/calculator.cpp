@@ -158,13 +158,19 @@ bool calculator::ismatch(QString input)// check input and return bool
         if (isopr(input[i]) or input[i] == ')' or input[i] == '(')
         {
             if ( input[i] == '(' )// brakets checker ()
+            {
                 stk.push("(") ;
+                continue;
+            }
             else if (input[i] == ')')
             {
                 if (stk.isemptys())
                     return false;
                 if (stk.top() == "(" )
+                {
                     stk.pop() ;
+                    continue;
+                }
                 else
                     return false;
             }
@@ -194,7 +200,7 @@ bool calculator::ismatch(QString input)// check input and return bool
 double calculator::calculate(QList<QString> postfix)// calculate the input
 {
     double answer = 0 ;
-    int i=0 ;
+    int i=0 , j = 2 ;
     auto it = postfix.begin() ;
     while ( postfix.size() != 1 )
     {
@@ -221,14 +227,37 @@ double calculator::calculate(QList<QString> postfix)// calculate the input
             else if (opr == "^")
                 answer = pow(num1 , num2) ;
             postfix.insert(i, QString::number(answer)) ;
+            QString stpbystp = ui->stepbysteppte->toPlainText() + QString::number( j ) + " --> " + postfixtoinfix(postfix) + "\n" ;
+            ui->stepbysteppte->setPlainText(stpbystp) ;
             it = postfix.begin() ;
             i=0;
+            j++ ;
             continue;
         }
         ++it ;
         i++ ;
     }
     return answer;
+}
+
+QString calculator::postfixtoinfix(QList<QString> postfix)// converte postfix to infix
+{
+    QString infix ;
+    Stack<QString> stk ;
+    //for (auto it = postfix.begin() ; it!=postfix.end() ; ++it)
+    for (QString it  : postfix)
+    {
+        if (isopr(it))
+        {
+            QString num2 = stk.pop() ;
+            QString num1 = stk.pop() ;
+            stk.push("(" + num1 + it + num2 + ")") ;
+        }
+        else
+            stk.push(it) ;
+    }
+    infix = stk.pop() ;
+    return infix;
 }
 
 
@@ -242,8 +271,23 @@ void calculator::on_equalbtn_pressed()// ==
         QMessageBox::information(this , "error" , "input is invalid try again") ;
         return;
     }
+    ui->stepbysteppte->clear() ;
+    ui->stepbysteppte->setPlainText("1 --> " + infix + "\n" ) ;
     double output = calculate(infixtopostfix(clearinput(infix))) ;// calling 3 function in each other first call clearinput then call infix to postfix then call calculate fu
+    ui->stepbysteppte->setPlainText( ui->stepbysteppte->toPlainText() + "final --> " + QString::number(output) + "\n" ) ;
     ui->inputpte->clear() ;// clear input plain text edit
     ui->inputpte->setPlainText(QString::number(output)) ; // set answer in input plain text edit
+}
+
+
+void calculator::on_stepbystepboxbtn_pressed()
+{
+    ui->grpbox_stepbystep->show() ;
+}
+
+
+void calculator::on_stepbystepboxbtn_clicked()
+{
+    ui->grpbox_stepbystep->hide() ;
 }
 
