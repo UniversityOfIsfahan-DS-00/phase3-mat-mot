@@ -6,7 +6,9 @@ calculator::calculator(QWidget *parent)
     , ui(new Ui::calculator)
 {
     ui->setupUi(this);
-
+    ui->grpbox_advance->hide();
+    ui->grpbox_option->hide() ;
+    ui->grpbox_stepbystep->hide() ;
 }
 
 calculator::~calculator()
@@ -111,3 +113,62 @@ bool calculator::isopr(QString input)
         return true;
     return false;
 }
+
+bool calculator::ismatch(QString input)
+{
+
+    return true;
+}
+
+double calculator::calculate(QList<QString> postfix)
+{
+    double answer = 0 ;
+    auto it = postfix.begin() ;
+    while ( postfix.size() != 1 )
+    {
+        if (isopr(*it))
+        {
+            QString opr = *it ;
+            it--;
+            double num2 = (*it).toDouble() ;
+            it--;
+            double num1 = (*it).toDouble() ;
+            int n = postfix.indexOf(*it) ;
+            postfix.removeAt(n) ;
+            postfix.removeAt(n) ;
+            postfix.removeAt(n) ;
+            if (opr == "+")
+                answer = num1 + num2 ;
+            else if (opr == "-")
+                answer = num1 - num2 ;
+            else if (opr == "*")
+                answer = num1 * num2 ;
+            else if (opr == "/")
+                answer = num1 / num2 ;
+            else if (opr == "^")
+                answer = pow(num1 , num2) ;
+            postfix.insert(n, QString::number(answer)) ;
+            it = postfix.begin() ;
+            continue;
+        }
+        ++it ;
+    }
+    return answer;
+}
+
+
+void calculator::on_equalbtn_pressed()
+{
+    QString infix = ui->inputpte->toPlainText() ;
+    if ( !ismatch(infix) )
+    {
+        ui->inputpte->clear() ;
+        ui->inputpte->setPlaceholderText("error !") ;
+        QMessageBox::information(this , "error" , "input is invalid try again") ;
+        return;
+    }
+    double output = calculate(infixtopostfix(infix)) ;
+    ui->inputpte->clear() ;
+    ui->inputpte->setPlainText(QString::number(output)) ;
+}
+

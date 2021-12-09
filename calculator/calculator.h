@@ -12,6 +12,7 @@
 #include <QList>
 #include <string.h>
 #include <string>
+#include <cmath>
 QT_BEGIN_NAMESPACE
 namespace Ui { class calculator; }
 QT_END_NAMESPACE
@@ -27,6 +28,12 @@ public:
     QList<QString> infixtopostfix (QString infix) ;
     bool isnum (QString input ) ;
     bool isopr (QString input ) ;
+    bool ismatch (QString input ) ;
+    double calculate (QList<QString> postfix) ;
+private slots:
+
+    void on_equalbtn_pressed();
+
 private:
     Ui::calculator *ui;
 };
