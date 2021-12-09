@@ -25,6 +25,8 @@ public:
     calculator(QWidget *parent = nullptr);
     ~calculator();
     int opr_priority (QChar ch) ;
+    bool isnegetivsign (QString str , int i) ;
+    QString clearinput (QString input) ;
     QList<QString> infixtopostfix (QString infix) ;
     bool isnum (QString input ) ;
     bool isopr (QString input ) ;

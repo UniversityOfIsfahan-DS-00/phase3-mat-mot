@@ -28,20 +28,50 @@ int calculator::opr_priority(QChar ch)
         return 0;
 }
 
+bool calculator::isnegetivsign(QString str, int i)
+{
+    if (i == 0 )
+        return true;
+    if (str[i-1] == ')' and str[i+1] == '(')
+        return false;
+    if (isnum( str[i-1]) and isnum( str[i+1] ))
+        return false;
+    if (str[i-1] == ')' and isnum( str[i+1]))
+        return false;
+    return true;
+}
+
+QString calculator::clearinput(QString input)
+{
+    for (auto it=0 ; it < input.length() ; it++)
+        if (input[it] == ' ' )
+        {
+            input.remove(it,1) ;
+            it--;
+        }
+        else if ( input[it] == '\n' )
+        {
+            input.remove(it,2) ;
+            it-=2;
+        }
+    return input;
+}
+
 QList<QString> calculator::infixtopostfix(QString infix)
 {
     Stack<char> stack;
     QList<QString> postfix ;
     bool flag = true ;
-    for(auto it = infix.begin(); it!=infix.end(); it++)
+    int i=0 ;
+    for(auto it = infix.begin(); it!=infix.end(); it++ , i++)
     {
         if(isnum(*it))
-            if (flag == true)
+            if (flag == true)// flag its gone detect num with more than one digits
                 postfix += *it;
             else
             {
-                QString s = postfix.first() + *it ;
-                postfix.pop_front() ;
+                QString s = postfix.last() + *it ;
+                postfix.pop_back() ;
                 postfix.append(s) ;
             }
         else if(*it == '(')
@@ -54,8 +84,10 @@ QList<QString> calculator::infixtopostfix(QString infix)
                 postfix.append(QChar::fromLatin1( stack.pop() )) ;
             stack.pop();
         }
-        else
+        else if (isopr(*it))
         {
+            if (*it == '-' and isnegetivsign(infix , i ))
+                postfix += "0" ;
             if(opr_priority(*it) > opr_priority(stack.top()))
                 stack.push(it->toLatin1());
             else
@@ -123,6 +155,7 @@ bool calculator::ismatch(QString input)
 double calculator::calculate(QList<QString> postfix)
 {
     double answer = 0 ;
+    int i=0 ;
     auto it = postfix.begin() ;
     while ( postfix.size() != 1 )
     {
@@ -130,13 +163,15 @@ double calculator::calculate(QList<QString> postfix)
         {
             QString opr = *it ;
             it--;
+            i--;
             double num2 = (*it).toDouble() ;
             it--;
+            i--;
             double num1 = (*it).toDouble() ;
-            int n = postfix.indexOf(*it) ;
-            postfix.removeAt(n) ;
-            postfix.removeAt(n) ;
-            postfix.removeAt(n) ;
+            //int n = postfix.indexOf(*it) ;
+            postfix.removeAt(i) ;
+            postfix.removeAt(i) ;
+            postfix.removeAt(i) ;
             if (opr == "+")
                 answer = num1 + num2 ;
             else if (opr == "-")
@@ -147,11 +182,13 @@ double calculator::calculate(QList<QString> postfix)
                 answer = num1 / num2 ;
             else if (opr == "^")
                 answer = pow(num1 , num2) ;
-            postfix.insert(n, QString::number(answer)) ;
+            postfix.insert(i, QString::number(answer)) ;
             it = postfix.begin() ;
+            i=0;
             continue;
         }
         ++it ;
+        i++ ;
     }
     return answer;
 }
@@ -167,7 +204,9 @@ void calculator::on_equalbtn_pressed()
         QMessageBox::information(this , "error" , "input is invalid try again") ;
         return;
     }
-    double output = calculate(infixtopostfix(infix)) ;
+    QString xx = clearinput(infix) ;
+    QList<QString> a = infixtopostfix(xx) ;
+    double output = calculate(a) ;
     ui->inputpte->clear() ;
     ui->inputpte->setPlainText(QString::number(output)) ;
 }
