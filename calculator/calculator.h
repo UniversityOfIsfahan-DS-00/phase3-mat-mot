@@ -20,7 +20,8 @@ QT_END_NAMESPACE
 class calculator : public QMainWindow
 {
     Q_OBJECT
-
+    double memory ;
+    bool memoryenable ;
 public:
     calculator(QWidget *parent = nullptr);
     ~calculator();
@@ -31,7 +32,7 @@ public:
     bool isnum (QString input ) ;
     bool isopr (QString input ) ;
     bool ismatch (QString input ) ;
-    double calculate (QList<QString> postfix) ;
+    double calculate (QList<QString> postfix , bool stepbystepon ) ;
     QString postfixtoinfix (QList<QString> postfix) ;
 private slots:
 
@@ -42,6 +43,54 @@ private slots:
     void on_stepbystepboxbtn_pressed();
 
     void on_stepbystepboxbtn_clicked();
+
+    void on_openbraketbtn_pressed();
+
+    void on_closebraketbtn_pressed();
+
+    void on_zerobtn_pressed();
+
+    void on_dotbtn_pressed();
+
+    void on_onebtn_pressed();
+
+    void on_twobtn_pressed();
+
+    void on_threebtn_pressed();
+
+    void on_plusbtn_pressed();
+
+    void on_fourbtn_pressed();
+
+    void on_fivebtn_pressed();
+
+    void on_sixbtn_pressed();
+
+    void on_minesbtn_pressed();
+
+    void on_sevenbtn_pressed();
+
+    void on_eightbtn_pressed();
+
+    void on_ninebtn_pressed();
+
+    void on_fullclearbtn_pressed();
+
+    void on_powerbtn_pressed();
+
+    void on_divisinbtn_pressed();
+
+    void on_multiplebtn_pressed();
+
+    void on_singledeletebtn_pressed();
+
+    void on_mcbtn_pressed();
+
+    void on_mrbtn_pressed();
+
+    void on_mplusbtn_pressed();
+
+    void on_mminesbtn_pressed();
 
 private:
     Ui::calculator *ui;

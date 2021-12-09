@@ -6,6 +6,8 @@ calculator::calculator(QWidget *parent)
     , ui(new Ui::calculator)
 {
     ui->setupUi(this);
+    this->memory = 0 ;
+    this->memoryenable = false ;
     ui->grpbox_advance->hide();
     ui->grpbox_option->hide() ;
     ui->grpbox_stepbystep->hide() ;
@@ -67,7 +69,7 @@ QList<QString> calculator::infixtopostfix(QString infix)// this function convert
     QList<QString> postfix ;
     bool flag = true ;
     int i=0 ;
-    for(auto it = infix.begin(); it!=infix.end(); it++ , i++)
+    for(QString::iterator it = infix.begin(); it!=infix.end(); it++ , i++)
     {
         if(isnum(*it))
             if (flag == true)// flag its gone detect num with more than one digits
@@ -152,6 +154,8 @@ bool calculator::isopr(QString input)// check the  math operator
 
 bool calculator::ismatch(QString input)// check input and return bool
 {
+    if (input.isEmpty())
+        return false;
     input = clearinput(input) ; // removeing " " and "\n" in input to continue
     Stack<QString> stk ;
     for (int i=0 ; i<input.length() ; i++)// check all char in string
@@ -175,7 +179,11 @@ bool calculator::ismatch(QString input)// check input and return bool
                     return false;
             }
             if (i == 0 or i==input.length()-1 ) // check opr in first of input
+            {
+                if (input[i] == '-' and i==0 )
+                    continue;
                 return false;
+            }
             if (input[i] == '/' and input[i+1] == '0')
                 return false;
             if (input[i-1] == ')' and input[i+1] == '(')// check ) opr ( if true will continue in other char
@@ -197,11 +205,11 @@ bool calculator::ismatch(QString input)// check input and return bool
     return true;
 }
 
-double calculator::calculate(QList<QString> postfix)// calculate the input
+double calculator::calculate(QList<QString> postfix , bool stepbystepon )// calculate the input
 {
     double answer = 0 ;
     int i=0 , j = 2 ;
-    auto it = postfix.begin() ;
+    QList<QString>::iterator it = postfix.begin() ;
     while ( postfix.size() != 1 )
     {
         if (isopr(*it))
@@ -226,9 +234,10 @@ double calculator::calculate(QList<QString> postfix)// calculate the input
                 answer = num1 / num2 ;
             else if (opr == "^")
                 answer = pow(num1 , num2) ;
+            answer = round(answer*100000)/100000 ;
             postfix.insert(i, QString::number(answer)) ;
-            QString stpbystp = ui->stepbysteppte->toPlainText() + QString::number( j ) + " --> " + postfixtoinfix(postfix) + "\n" ;
-            ui->stepbysteppte->setPlainText(stpbystp) ;
+            if (stepbystepon)
+                ui->stepbysteppte->appendPlainText(QString::number( j ) + " --> " + postfixtoinfix(postfix) + "\n" ) ;
             it = postfix.begin() ;
             i=0;
             j++ ;
@@ -237,6 +246,7 @@ double calculator::calculate(QList<QString> postfix)// calculate the input
         ++it ;
         i++ ;
     }
+    answer = postfix.first().toDouble() ;
     return answer;
 }
 
@@ -273,8 +283,8 @@ void calculator::on_equalbtn_pressed()// ==
     }
     ui->stepbysteppte->clear() ;
     ui->stepbysteppte->setPlainText("1 --> " + infix + "\n" ) ;
-    double output = calculate(infixtopostfix(clearinput(infix))) ;// calling 3 function in each other first call clearinput then call infix to postfix then call calculate fu
-    ui->stepbysteppte->setPlainText( ui->stepbysteppte->toPlainText() + "final --> " + QString::number(output) + "\n" ) ;
+    double output = calculate(infixtopostfix(clearinput(infix)) , true ) ;// calling 3 function in each other first call clearinput then call infix to postfix then call calculate fu
+    ui->stepbysteppte->appendPlainText("final --> " + QString::number(output) + "\n" ) ;
     ui->inputpte->clear() ;// clear input plain text edit
     ui->inputpte->setPlainText(QString::number(output)) ; // set answer in input plain text edit
 }
@@ -289,5 +299,166 @@ void calculator::on_stepbystepboxbtn_pressed()
 void calculator::on_stepbystepboxbtn_clicked()
 {
     ui->grpbox_stepbystep->hide() ;
+}
+
+
+void calculator::on_openbraketbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"(") ;
+}
+
+
+void calculator::on_closebraketbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+")") ;
+}
+
+
+void calculator::on_zerobtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"0") ;
+}
+
+
+void calculator::on_dotbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+".") ;
+}
+
+
+void calculator::on_onebtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"1") ;
+}
+
+
+void calculator::on_twobtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"2") ;
+}
+
+
+void calculator::on_threebtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"3") ;
+}
+
+
+void calculator::on_plusbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"+") ;
+}
+
+
+void calculator::on_fourbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"4") ;
+}
+
+
+void calculator::on_fivebtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"5") ;
+}
+
+
+void calculator::on_sixbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"6") ;
+}
+
+
+void calculator::on_minesbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"-") ;
+}
+
+
+void calculator::on_sevenbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"7") ;
+}
+
+
+void calculator::on_eightbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"8") ;
+}
+
+
+void calculator::on_ninebtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"9") ;
+}
+
+
+void calculator::on_fullclearbtn_pressed()
+{
+    ui->inputpte->clear();
+}
+
+
+void calculator::on_powerbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"^") ;
+}
+
+
+void calculator::on_divisinbtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"/") ;
+}
+
+
+void calculator::on_multiplebtn_pressed()
+{
+    ui->inputpte->setPlainText(ui->inputpte->toPlainText()+"*") ;
+}
+
+
+void calculator::on_singledeletebtn_pressed()
+{
+    //ui->inputpte->deleteLater();
+    QString a = ui->inputpte->toPlainText() ;
+    a.remove(a.length()-1 , 1) ;
+    ui->inputpte->setPlainText(a) ;
+}
+
+
+void calculator::on_mcbtn_pressed()
+{
+    this->memory = 0 ;
+    this->memoryenable = false ;
+}
+
+
+void calculator::on_mrbtn_pressed()
+{
+    if (memoryenable)
+        ui->inputpte->setPlainText(ui->inputpte->toPlainText() + QString::number(memory)) ;
+}
+
+
+void calculator::on_mplusbtn_pressed()
+{
+    if ( !ismatch(ui->inputpte->toPlainText()) )// call is match fu that control input valieableity
+    {
+        QMessageBox::information(this , "error" , "input is invalid try again") ;
+        return;
+    }
+    this->memoryenable = true ;
+    this->memory += calculate(infixtopostfix(ui->inputpte->toPlainText()) , false) ;
+}
+
+
+void calculator::on_mminesbtn_pressed()
+{
+    if ( !ismatch(ui->inputpte->toPlainText()) )// call is match fu that control input valieableity
+    {
+        QMessageBox::information(this , "error" , "input is invalid try again") ;
+        return;
+    }
+    this->memoryenable = true ;
+    this->memory -= calculate(infixtopostfix(ui->inputpte->toPlainText()) , false) ;
 }
 
