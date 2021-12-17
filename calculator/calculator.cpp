@@ -210,20 +210,14 @@ double calculator::calculate(QList<QString> postfix , bool stepbystepon )// calc
     double answer = 0 ;
     int i=0 , j = 2 ;
     QList<QString>::iterator it = postfix.begin() ;
-    while ( postfix.size() != 1 )
+    Stack<QString> stk ;
+    while (it!=postfix.end())
     {
-        if (isopr(*it))
+        if (isopr((*it)))
         {
+            double num2 = stk.pop().toDouble() ;
+            double num1 = stk.pop().toDouble() ;
             QString opr = *it ;
-            it--;
-            i--;
-            double num2 = (*it).toDouble() ;
-            it--;
-            i--;
-            double num1 = (*it).toDouble() ;
-            postfix.removeAt(i) ;
-            postfix.removeAt(i) ;
-            postfix.removeAt(i) ;
             if (opr == "+")
                 answer = num1 + num2 ;
             else if (opr == "-")
@@ -233,20 +227,72 @@ double calculator::calculate(QList<QString> postfix , bool stepbystepon )// calc
             else if (opr == "/")
                 answer = num1 / num2 ;
             else if (opr == "^")
-                answer = pow(num1 , num2) ;
+                answer = pow(num1 , num2) ;//***********************---------complexity of pow is O(n) ;
             answer = round(answer*100000)/100000 ;
-            postfix.insert(i, QString::number(answer)) ;
+            stk.push(QString::number( answer )) ;//********************------complexity of number is O(n) ;
             if (stepbystepon)
-                ui->stepbysteppte->appendPlainText(QString::number( j ) + " --> " + postfixtoinfix(postfix) + "\n" ) ;
-            it = postfix.begin() ;
-            i=0;
-            j++ ;
-            continue;
+            {
+                Stack<QString> stktmp ;
+                stktmp =  stk  ; //*************----------------O(n)
+                QList<QString> listtmp ;
+                while (!stktmp.isemptys())//***********---- O(n)
+                {
+                        listtmp.push_back(stktmp.pop()) ;
+                }
+                QList<QString>::iterator ittmp = it ;
+                ++ittmp ;
+                while (ittmp != postfix.end())//***********------------O(n)
+                {
+                    listtmp.push_back(*ittmp) ;
+                    ++ittmp ;
+                }
+                ui->stepbysteppte->appendPlainText(QString::number( j ) + " --> " + postfixtoinfix(listtmp) + "\n" ) ;//***---- complexity of postfix to infix is O(n)
+                j++ ;
+            }
         }
+        else
+            stk.push(*it) ;
         ++it ;
         i++ ;
     }
-    answer = postfix.first().toDouble() ;
+    //    while ( postfix.size() != 1 )
+    //    {
+    //        if (isopr(*it))
+    //        {
+    //            QString opr = *it ;
+    //            it--;
+    //            i--;
+    //            double num2 = (*it).toDouble() ;
+    //            it--;
+    //            i--;
+    //            double num1 = (*it).toDouble() ;
+    //            postfix.removeAt(i) ;
+    //            postfix.removeAt(i) ;
+    //            postfix.removeAt(i) ;
+    //            if (opr == "+")
+    //                answer = num1 + num2 ;
+    //            else if (opr == "-")
+    //                answer = num1 - num2 ;
+    //            else if (opr == "*")
+    //                answer = num1 * num2 ;
+    //            else if (opr == "/")
+    //                answer = num1 / num2 ;
+    //            else if (opr == "^")
+    //                answer = pow(num1 , num2) ;
+    //            answer = round(answer*100000)/100000 ;
+    //            postfix.insert(i, QString::number(answer)) ;
+    //            if (stepbystepon)
+    //                ui->stepbysteppte->appendPlainText(QString::number( j ) + " --> " + postfixtoinfix(postfix) + "\n" ) ;
+    //            it = postfix.begin() ;
+    //            i=0;
+    //            j++ ;
+    //            continue;
+    //        }
+    //        ++it ;
+    //        i++ ;
+    //    }
+    //    answer = postfix.first().toDouble() ;
+    answer = stk.pop().toDouble() ;
     return answer;
 }
 

@@ -34,6 +34,9 @@
   <property name="windowTitle">
    <string>calculator</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -148,6 +151,9 @@
              <height>16777215</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
           </widget>
          </item>
          <item>
@@ -215,12 +221,18 @@
            </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="powerbtn">
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
              <property name="text">
               <string/>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/navigate-up-arrow.png</normaloff>C:/Users/Matin/Desktop/navigate-up-arrow.png</iconset>
+               <normaloff>C:/Users/Matin/Desktop/New folder (2)/seven.png</normaloff>C:/Users/Matin/Desktop/New folder (2)/seven.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -600,8 +612,51 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuHistory">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionHistory"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="actionUS"/>
+    <addaction name="actionDonate"/>
+   </widget>
+   <addaction name="menuHistory"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionHistory">
+   <property name="text">
+    <string>History</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionUS">
+   <property name="text">
+    <string>US</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionDonate">
+   <property name="text">
+    <string>Donate</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

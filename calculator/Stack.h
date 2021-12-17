@@ -235,5 +235,14 @@ public:
     {
         return this->remove_first();
     }
+    void operator = (  Stack<T> & a)
+    {
+        node<T> * tmp = a.getHead() ;
+        while (tmp != nullptr )
+        {
+            this->push(tmp->value) ;
+            tmp = tmp->next ;
+        }
+    }
 };
 #endif // STACK_H
