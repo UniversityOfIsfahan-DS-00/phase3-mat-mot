@@ -49,17 +49,22 @@ bool calculator::isnegetivsign(QString str, int i)// this function detect diffre
 
 QString calculator::clearinput(QString input) // this function clear " " and "\n" in input
 {
-    for (auto it=0 ; it < input.length() ; it++)
-        if (input[it] == ' ' )
+    for (int it=0 ; it < input.length() ; it++)
+        if (input[it] == ' ' or input[it] == '\n' )
         {
             input.remove(it,1) ;
             it--;
         }
-        else if ( input[it] == '\n' )
-        {
-            input.remove(it,2) ;
-            it-=2;
-        }
+//        else if ( input[it] == '\n' )
+//        {
+//            if (it == 0)
+//            {
+//                input.remove(it , 1) ;
+//                continue;
+//            }
+//            input.remove(it,2) ;
+//            it-=2;
+//        }
     return input;
 }
 
@@ -178,21 +183,23 @@ bool calculator::ismatch(QString input)// check input and return bool
                 else
                     return false;
             }
-            if (i == 0 or i==input.length()-1 ) // check opr in first of input
+            else if (i == 0 or i==input.length()-1 ) // check opr in first of input
             {
                 if (input[i] == '-' and i==0 )
                     continue;
                 return false;
             }
-            if (input[i] == '/' and input[i+1] == '0')
+            else if (input[i] == '/' and input[i+1] == '0')
                 return false;
-            if (input[i-1] == ')' and input[i+1] == '(')// check ) opr ( if true will continue in other char
+            else if (input[i-1] == ')' and input[i+1] == '(')// check ) opr ( if true will continue in other char
                 continue;
-            if (isnum( input[i-1]) and isnum( input[i+1] ))// check "num" opr "num" if true will continue in other char
+            else if (isnum( input[i-1]) and isnum( input[i+1] ))// check "num" opr "num" if true will continue in other char
                 continue;
-            if (input[i-1] == ')' and isnum( input[i+1]))// check ) opr "num" if true will continue in other char
+            else if (input[i-1] == ')' and isnum( input[i+1]))// check ) opr "num" if true will continue in other char
                 continue;
-            if (isnum( input[i-1]) and input[i+1] == '(' )// check "num" opr ( if true will continue in other char
+            else if (isnum( input[i-1]) and input[i+1] == '(' )// check "num" opr ( if true will continue in other char
+                continue;
+            else if (input[i] == '-')
                 continue;
             return false;// if opr does like four type then it is in valid
         }
@@ -228,8 +235,8 @@ double calculator::calculate(QList<QString> postfix , bool stepbystepon )// calc
                 answer = num1 / num2 ;
             else if (opr == "^")
                 answer = pow(num1 , num2) ;//***********************---------complexity of pow is O(n) ;
-            answer = round(answer*100000)/100000 ;
-            stk.push(QString::number( answer )) ;//********************------complexity of number is O(n) ;
+            answer = round(answer*10000000)/10000000 ;
+            stk.push(QString::number( answer , 'g' , 15 )) ;//********************------complexity of number is O(n) ;
             if (stepbystepon)
             {
                 Stack<QString> stktmp ;
@@ -330,9 +337,9 @@ void calculator::on_equalbtn_pressed()// ==
     ui->stepbysteppte->clear() ;
     ui->stepbysteppte->setPlainText("1 --> " + infix + "\n" ) ;
     double output = calculate(infixtopostfix(clearinput(infix)) , true ) ;// calling 3 function in each other first call clearinput then call infix to postfix then call calculate fu
-    ui->stepbysteppte->appendPlainText("final --> " + QString::number(output) + "\n" ) ;
+    ui->stepbysteppte->appendPlainText("final --> " + QString::number(output , 'g' , 15 ) + "\n" ) ;
     ui->inputpte->clear() ;// clear input plain text edit
-    ui->inputpte->setPlainText(QString::number(output)) ; // set answer in input plain text edit
+    ui->inputpte->setPlainText(QString::number(output , 'g' , 15)) ; // set answer in input plain text edit
 }
 
 
