@@ -8,7 +8,6 @@ calculator::calculator(QWidget *parent)
     ui->setupUi(this);
     this->memory = 0 ;
     this->memoryenable = false ;
-    ui->grpbox_advance->hide();
     ui->grpbox_option->hide() ;
     ui->grpbox_stepbystep->hide() ;
     ui->advanceboxbtn->hide() ;
@@ -340,6 +339,12 @@ void calculator::on_equalbtn_pressed()// ==
     ui->stepbysteppte->appendPlainText("final --> " + QString::number(output , 'g' , 15 ) + "\n" ) ;
     ui->inputpte->clear() ;// clear input plain text edit
     ui->inputpte->setPlainText(QString::number(output , 'g' , 15)) ; // set answer in input plain text edit
+//    Binary_Tree<QString>  tree ;
+//    tree.fillfrompostfix(infixtopostfix(clearinput(infix))) ;
+//    QString treeveiw = tree.print2D() ;
+//    int a = tree.height(tree.getroot()) ;
+//    QList<Node<QString> * > tmp = tree.treetolist() ;
+//    ui->treepte->setPlainText(treeveiw) ;
 }
 
 
@@ -513,5 +518,26 @@ void calculator::on_mminesbtn_pressed()
     }
     this->memoryenable = true ;
     this->memory -= calculate(infixtopostfix(ui->inputpte->toPlainText()) , false) ;
+}
+
+
+void calculator::on_optionboxbtn_pressed()
+{
+    ui->grpbox_option->show() ;
+}
+
+
+void calculator::on_optionboxbtn_clicked()
+{
+    ui->grpbox_option->hide() ;
+}
+
+
+void calculator::on_inputpte_textChanged()
+{
+    if (ismatch(ui->inputpte->toPlainText()))
+        ui->inputpte->setStyleSheet("QPlainTextEdit {color : black}") ;
+    else
+        ui->inputpte->setStyleSheet("QPlainTextEdit {color : red}") ;
 }
 

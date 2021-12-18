@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -27,8 +27,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>719</width>
-    <height>589</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -47,35 +47,63 @@
          <string>option</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
-         <item row="3" column="1">
-          <widget class="QPushButton" name="opteightbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="optthreebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
+         <item row="1" column="1">
           <widget class="QPushButton" name="opttwobtn">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="opttenbtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="opteightbtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item row="2" column="1">
+          <widget class="QPushButton" name="optfourbtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
           <widget class="QPushButton" name="optsixbtn">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
+         <item row="4" column="0">
+          <widget class="QPushButton" name="optsevenbtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QPushButton" name="optninebtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="optthreebtn">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
           <widget class="QPushButton" name="optonebtn">
            <property name="text">
             <string/>
@@ -83,39 +111,14 @@
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QPushButton" name="optsevenbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
           <widget class="QPushButton" name="optfivebtn">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="4" column="0">
-          <widget class="QPushButton" name="optninebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="optfourbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QPushButton" name="opttenbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="lineEdit"/>
          </item>
         </layout>
        </widget>
@@ -161,64 +164,6 @@
            <property name="topMargin">
             <number>0</number>
            </property>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="mcbtn">
-             <property name="text">
-              <string>mc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QPushButton" name="onebtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/one (1).png</normaloff>C:/Users/Matin/Desktop/one (1).png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="QPushButton" name="fivebtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/five (1).png</normaloff>C:/Users/Matin/Desktop/five (1).png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="divisinbtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/divide.png</normaloff>C:/Users/Matin/Desktop/divide.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QPushButton" name="fourbtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/four (1).png</normaloff>C:/Users/Matin/Desktop/four (1).png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QPushButton" name="mrbtn">
-             <property name="text">
-              <string>mr</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="powerbtn">
              <property name="contextMenuPolicy">
@@ -229,68 +174,24 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/New folder (2)/seven.png</normaloff>C:/Users/Matin/Desktop/New folder (2)/seven.png</iconset>
+               <normaloff>icon/navigate-up-arrow.png</normaloff>icon/navigate-up-arrow.png</iconset>
              </property>
              <property name="flat">
               <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="mplusbtn">
-             <property name="text">
-              <string>m+</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QPushButton" name="sevenbtn">
+           <item row="4" column="0">
+            <widget class="QPushButton" name="fourbtn">
              <property name="text">
               <string/>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/seven (1).png</normaloff>C:/Users/Matin/Desktop/seven (1).png</iconset>
+               <normaloff>icon/four (1).png</normaloff>icon/four (1).png</iconset>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="mminesbtn">
-             <property name="text">
-              <string>m-</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="singledeletebtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/delete.png</normaloff>C:/Users/Matin/Desktop/delete.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QPushButton" name="eightbtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/eight (1).png</normaloff>C:/Users/Matin/Desktop/eight (1).png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="multiplebtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/cancel.png</normaloff>C:/Users/Matin/Desktop/cancel.png</iconset>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -301,51 +202,45 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/nine (1).png</normaloff>C:/Users/Matin/Desktop/nine (1).png</iconset>
+               <normaloff>icon/nine (1).png</normaloff>icon/nine (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
-            <widget class="QPushButton" name="fullclearbtn">
+           <item row="1" column="3">
+            <widget class="QPushButton" name="singledeletebtn">
              <property name="text">
               <string/>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/letter-c.png</normaloff>C:/Users/Matin/Desktop/letter-c.png</iconset>
+               <normaloff>icon/delete.png</normaloff>icon/delete.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="4" column="2">
-            <widget class="QPushButton" name="sixbtn">
+           <item row="1" column="2">
+            <widget class="QPushButton" name="multiplebtn">
              <property name="text">
               <string/>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/six (1).png</normaloff>C:/Users/Matin/Desktop/six (1).png</iconset>
+               <normaloff>icon/cancel.png</normaloff>icon/cancel.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
-            <widget class="QPushButton" name="twobtn">
+           <item row="0" column="3">
+            <widget class="QPushButton" name="mminesbtn">
              <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/two (1).png</normaloff>C:/Users/Matin/Desktop/two (1).png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QPushButton" name="zerobtn">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>C:/Users/Matin/Desktop/zero (1).png</normaloff>C:/Users/Matin/Desktop/zero (1).png</iconset>
+              <string>m-</string>
              </property>
             </widget>
            </item>
@@ -356,7 +251,38 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/three (1).png</normaloff>C:/Users/Matin/Desktop/three (1).png</iconset>
+               <normaloff>icon/three (1).png</normaloff>icon/three (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="eightbtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/eight (1).png</normaloff>icon/eight (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPushButton" name="zerobtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/zero (1).png</normaloff>icon/zero (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -367,18 +293,52 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/minus-sign.png</normaloff>C:/Users/Matin/Desktop/minus-sign.png</iconset>
+               <normaloff>icon/minus-sign.png</normaloff>icon/minus-sign.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="5" column="3">
-            <widget class="QPushButton" name="plusbtn">
+           <item row="2" column="0">
+            <widget class="QPushButton" name="sevenbtn">
              <property name="text">
               <string/>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/plus.png</normaloff>C:/Users/Matin/Desktop/plus.png</iconset>
+               <normaloff>icon/seven (1).png</normaloff>icon/seven (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QPushButton" name="twobtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/two (1).png</normaloff>icon/two (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="fullclearbtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/letter-c.png</normaloff>icon/letter-c.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -395,13 +355,86 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/black-circle (1).png</normaloff>C:/Users/Matin/Desktop/black-circle (1).png</iconset>
+               <normaloff>icon/black-circle.png</normaloff>icon/black-circle.png</iconset>
              </property>
              <property name="iconSize">
               <size>
                <width>7</width>
                <height>7</height>
               </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="onebtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/one (1).png</normaloff>icon/one (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="divisinbtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/divide-mathematical-sign.png</normaloff>icon/divide-mathematical-sign.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="3">
+            <widget class="QPushButton" name="plusbtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/plus.png</normaloff>icon/plus.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QPushButton" name="sixbtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/six (1).png</normaloff>icon/six (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="mplusbtn">
+             <property name="text">
+              <string>m+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="mrbtn">
+             <property name="text">
+              <string>mr</string>
              </property>
             </widget>
            </item>
@@ -412,40 +445,50 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>C:/Users/Matin/Desktop/equal-mathematical-sign.png</normaloff>C:/Users/Matin/Desktop/equal-mathematical-sign.png</iconset>
+               <normaloff>icon/equal-mathematical-sign.png</normaloff>icon/equal-mathematical-sign.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="mcbtn">
+             <property name="text">
+              <string>mc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="fivebtn">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>icon/five (1).png</normaloff>icon/five (1).png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
            <item row="6" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetDefaultConstraint</enum>
+             </property>
+             <item row="0" column="0">
               <widget class="QPushButton" name="openbraketbtn">
-               <property name="maximumSize">
-                <size>
-                 <width>48</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>C:/Users/Matin/Desktop/parenthesis.png</normaloff>C:/Users/Matin/Desktop/parenthesis.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="closebraketbtn">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>16777215</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -454,7 +497,36 @@
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/Matin/Desktop/parenthesis (1).png</normaloff>C:/Users/Matin/Desktop/parenthesis (1).png</iconset>
+                 <normaloff>icon/parenthesis.png</normaloff>icon/parenthesis.png</iconset>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="closebraketbtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>icon/parenthesis (1).png</normaloff>icon/parenthesis (1).png</iconset>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -472,7 +544,10 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>C:/Users/Matin/Desktop/arrow-right.png</normaloff>C:/Users/Matin/Desktop/arrow-right.png</iconset>
+          <normaloff>icon/arrow-right.png</normaloff>icon/arrow-right.png</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -509,97 +584,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="grpbox_advance">
-      <property name="title">
-       <string>advance</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QPushButton" name="pushButton_47">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="pushButton_51">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QPushButton" name="pushButton_15">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton_48">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="pushButton_16">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QPushButton" name="pushButton_14">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushButton_49">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QPushButton" name="pushButton_17">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="pushButton_18">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="pushButton_50">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="pushButton_13">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton_52">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     <widget class="QPlainTextEdit" name="treepte"/>
     </item>
    </layout>
   </widget>
@@ -617,6 +602,7 @@
      <string>Menu</string>
     </property>
     <addaction name="actionHistory"/>
+    <addaction name="actionAdd_new_operator"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -655,6 +641,11 @@
   <action name="actionDonate">
    <property name="text">
     <string>Donate</string>
+   </property>
+  </action>
+  <action name="actionAdd_new_operator">
+   <property name="text">
+    <string>Add new operator</string>
    </property>
   </action>
  </widget>

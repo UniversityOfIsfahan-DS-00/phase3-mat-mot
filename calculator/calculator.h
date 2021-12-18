@@ -12,6 +12,7 @@
 #include <QList>
 #include <string.h>
 #include <string>
+#include "Tree.h"
 #include <cmath>
 QT_BEGIN_NAMESPACE
 namespace Ui { class calculator; }
@@ -91,6 +92,12 @@ private slots:
     void on_mplusbtn_pressed();
 
     void on_mminesbtn_pressed();
+
+    void on_optionboxbtn_pressed();
+
+    void on_optionboxbtn_clicked();
+
+    void on_inputpte_textChanged();
 
 private:
     Ui::calculator *ui;
