@@ -12,6 +12,7 @@
 #include <wchar.h>
 #include <QList>
 #include <string.h>
+#include <QIcon>
 #include <string>
 #include "Tree.h"
 #include <QShortcut>
@@ -104,6 +105,8 @@ private slots:
     void on_treeptebtn_clicked();
 
     void on_treeptebtn_pressed();
+
+    void on_actionExit_triggered();
 
 private:
     Ui::calculator *ui;

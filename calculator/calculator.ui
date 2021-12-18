@@ -514,8 +514,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>icon/down-arrow.png</normaloff>icon/down-arrow.png</iconset>
+       <iconset theme="arrow-left.png"/>
       </property>
      </widget>
     </item>

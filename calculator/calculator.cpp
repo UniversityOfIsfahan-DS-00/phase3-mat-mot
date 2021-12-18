@@ -12,6 +12,11 @@ calculator::calculator(QWidget *parent)
     ui->grpbox_stepbystep->hide() ;
     ui->optionboxbtn->hide() ;
     ui->treepte->hide() ;
+    //QStringList iconspath ;
+    //iconspath.append("D:\\prj\\phase3-mat-mot\\calculator\\icon\\") ;
+    //QIcon::setThemeSearchPaths(iconspath) ;
+    //QShortcut * ent = new QShortcut (QKeySequence("Enter") , parent ) ;
+    //QObject::connect( ent , SIGNAL(activated()) , this , on_equalbtn_pressed()) ;
 }
 
 calculator::~calculator()
@@ -352,12 +357,20 @@ void calculator::on_equalbtn_pressed()// ==
 void calculator::on_stepbystepboxbtn_pressed()
 {
     ui->grpbox_stepbystep->show() ;
+    QString path = ":/new/icon/icon/arrow-left.png" ;
+    QPixmap pm (path) ;
+    QIcon ic (pm) ;
+    ui->stepbystepboxbtn->setIcon(ic) ;
 }
 
 
 void calculator::on_stepbystepboxbtn_clicked()
 {
     ui->grpbox_stepbystep->hide() ;
+    QString path = ":/new/icon/icon/arrow-right.png" ;
+    QPixmap pm (path) ;
+    QIcon ic (pm) ;
+    ui->stepbystepboxbtn->setIcon(ic) ;
 }
 
 
@@ -546,11 +559,25 @@ void calculator::on_inputpte_textChanged()
 void calculator::on_treeptebtn_clicked()
 {
     ui->treepte->hide() ;
+    QString path = ":/new/icon/icon/arrow-left.png" ;
+    QPixmap pm (path) ;
+    QIcon ic (pm) ;
+    ui->treeptebtn->setIcon(ic) ;
 }
 
 
 void calculator::on_treeptebtn_pressed()
 {
     ui->treepte->show() ;
+    QString path = ":/new/icon/icon/arrow-right.png" ;
+    QPixmap pm (path) ;
+    QIcon ic (pm) ;
+    ui->treeptebtn->setIcon(ic) ;
+}
+
+
+void calculator::on_actionExit_triggered()
+{
+    this->close() ;
 }
 
