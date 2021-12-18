@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/new/icon">
+        <file>icon/arrow-left.png</file>
+        <file>icon/arrow-right.png</file>
+        <file>icon/black-circle (1).png</file>
+        <file>icon/black-circle.png</file>
+        <file>icon/cancel.png</file>
+        <file>icon/delete.png</file>
+        <file>icon/divide.png</file>
+        <file>icon/divide-mathematical-sign.png</file>
+        <file>icon/down-arrow.png</file>
+        <file>icon/eight (1).png</file>
+        <file>icon/eight.png</file>
+        <file>icon/equal-mathematical-sign.png</file>
+        <file>icon/five (1).png</file>
+        <file>icon/five.png</file>
+        <file>icon/four (1).png</file>
+        <file>icon/four.png</file>
+        <file>icon/letter-c.png</file>
+        <file>icon/mathematical-basic-signs-of-plus-and-minus-with-a-slash.png</file>
+        <file>icon/minus-sign.png</file>
+        <file>icon/multiplication-sign.png</file>
+        <file>icon/navigate-up-arrow.png</file>
+        <file>icon/next.png</file>
+        <file>icon/nine (1).png</file>
+        <file>icon/nine.png</file>
+        <file>icon/one (1).png</file>
+        <file>icon/one.png</file>
+        <file>icon/parentheses-grouping-symbol.png</file>
+        <file>icon/parenthesis (1).png</file>
+        <file>icon/parenthesis.png</file>
+        <file>icon/percent-sign.png</file>
+        <file>icon/pi.png</file>
+        <file>icon/plus.png</file>
+        <file>icon/seven (1).png</file>
+        <file>icon/seven.png</file>
+        <file>icon/six (1).png</file>
+        <file>icon/six.png</file>
+        <file>icon/square-root-of-x-mathematical-signs.png</file>
+        <file>icon/three (1).png</file>
+        <file>icon/three.png</file>
+        <file>icon/two (1).png</file>
+        <file>icon/two.png</file>
+        <file>icon/up-arrow.png</file>
+        <file>icon/zero (1).png</file>
+        <file>icon/zero.png</file>
+    </qresource>
+</RCC>

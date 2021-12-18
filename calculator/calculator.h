@@ -2,6 +2,7 @@
 #define CALCULATOR_H
 
 #include <QMainWindow>
+#include <QObject>
 #include <QStringList>
 #include <QMessageBox>
 #include <QString>
@@ -13,6 +14,7 @@
 #include <string.h>
 #include <string>
 #include "Tree.h"
+#include <QShortcut>
 #include <cmath>
 QT_BEGIN_NAMESPACE
 namespace Ui { class calculator; }
