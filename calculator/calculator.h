@@ -99,6 +99,10 @@ private slots:
 
     void on_inputpte_textChanged();
 
+    void on_treeptebtn_clicked();
+
+    void on_treeptebtn_pressed();
+
 private:
     Ui::calculator *ui;
 };

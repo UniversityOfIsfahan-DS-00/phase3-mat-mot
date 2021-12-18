@@ -263,39 +263,41 @@ public:
              }
         this->set_root(stk.pop()) ;
         this->size = postfix.size() ;
-    }/*
-    QString print2DUtil(Node<T> *root, int space)
+    }
+    void print2DUtil(Node<T> *root, int space , QString * output)
     {
-        QString output ;
+        //QString output ;
         // Base case
         if (root == nullptr)
-            return NULL;
+            return;
 
         // Increase distance between levels
         space += 10;
 
         // Process right child first
-        print2DUtil(root->getRight(), space);
+        print2DUtil(root->getRight(), space , output);
 
         // Print current node after space
         // count
         //cout<<endl;
-        output += "\n" ;
+        *output += "\n" ;
         for (int i = 10; i < space; i++)
-            output += " " ;
-        output += root->getValue() + "\n" ;
+            *output += " " ;
+        *output += root->getValue() + "\n" ;
 
         // Process left child
-        print2DUtil(root->getLeft(), space);
-        return output;
+        print2DUtil(root->getLeft(), space , output );
+        //return output;
     }
 
     // Wrapper over print2DUtil()
     QString print2D()
     {
+        QString output ;
         // Pass initial space count as 0
-        return  print2DUtil(this->root, 0);
-    }*/
+        print2DUtil(this->root, 0 , &output);
+        return output ;
+    }
     int height (Node<T> * p )
     {
         int h = 0 ;

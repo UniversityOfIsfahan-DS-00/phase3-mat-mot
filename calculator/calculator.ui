@@ -42,95 +42,19 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QGroupBox" name="grpbox_option">
-        <property name="title">
-         <string>option</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_3">
-         <item row="1" column="1">
-          <widget class="QPushButton" name="opttwobtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QPushButton" name="opttenbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QPushButton" name="opteightbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="optfourbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QPushButton" name="optsixbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QPushButton" name="optsevenbtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QPushButton" name="optninebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QPushButton" name="optthreebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="optonebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QPushButton" name="optfivebtn">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLineEdit" name="lineEdit"/>
-         </item>
-        </layout>
-       </widget>
+       <widget class="QPlainTextEdit" name="treepte"/>
       </item>
       <item>
-       <widget class="QPushButton" name="optionboxbtn">
+       <widget class="QPushButton" name="treeptebtn">
         <property name="text">
-         <string/>
+         <string>Tree</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>C:/Users/Matin/Desktop/arrow-left.png</normaloff>C:/Users/Matin/Desktop/arrow-left.png</iconset>
+          <normaloff>icon/arrow-left.png</normaloff>icon/arrow-left.png</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -170,7 +94,7 @@
               <enum>Qt::DefaultContextMenu</enum>
              </property>
              <property name="text">
-              <string/>
+              <string>^</string>
              </property>
              <property name="icon">
               <iconset>
@@ -184,7 +108,7 @@
            <item row="4" column="0">
             <widget class="QPushButton" name="fourbtn">
              <property name="text">
-              <string/>
+              <string>4</string>
              </property>
              <property name="icon">
               <iconset>
@@ -198,7 +122,7 @@
            <item row="2" column="2">
             <widget class="QPushButton" name="ninebtn">
              <property name="text">
-              <string/>
+              <string>9</string>
              </property>
              <property name="icon">
               <iconset>
@@ -212,7 +136,7 @@
            <item row="1" column="3">
             <widget class="QPushButton" name="singledeletebtn">
              <property name="text">
-              <string/>
+              <string>del</string>
              </property>
              <property name="icon">
               <iconset>
@@ -226,7 +150,7 @@
            <item row="1" column="2">
             <widget class="QPushButton" name="multiplebtn">
              <property name="text">
-              <string/>
+              <string>*</string>
              </property>
              <property name="icon">
               <iconset>
@@ -242,12 +166,15 @@
              <property name="text">
               <string>m-</string>
              </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="5" column="2">
             <widget class="QPushButton" name="threebtn">
              <property name="text">
-              <string/>
+              <string>3</string>
              </property>
              <property name="icon">
               <iconset>
@@ -261,7 +188,7 @@
            <item row="2" column="1">
             <widget class="QPushButton" name="eightbtn">
              <property name="text">
-              <string/>
+              <string>8</string>
              </property>
              <property name="icon">
               <iconset>
@@ -275,7 +202,7 @@
            <item row="6" column="1">
             <widget class="QPushButton" name="zerobtn">
              <property name="text">
-              <string/>
+              <string>0</string>
              </property>
              <property name="icon">
               <iconset>
@@ -289,7 +216,7 @@
            <item row="4" column="3">
             <widget class="QPushButton" name="minesbtn">
              <property name="text">
-              <string/>
+              <string>-</string>
              </property>
              <property name="icon">
               <iconset>
@@ -303,7 +230,7 @@
            <item row="2" column="0">
             <widget class="QPushButton" name="sevenbtn">
              <property name="text">
-              <string/>
+              <string>7</string>
              </property>
              <property name="icon">
               <iconset>
@@ -317,7 +244,7 @@
            <item row="5" column="1">
             <widget class="QPushButton" name="twobtn">
              <property name="text">
-              <string/>
+              <string>2</string>
              </property>
              <property name="icon">
               <iconset>
@@ -331,7 +258,7 @@
            <item row="2" column="3">
             <widget class="QPushButton" name="fullclearbtn">
              <property name="text">
-              <string/>
+              <string>C</string>
              </property>
              <property name="icon">
               <iconset>
@@ -351,7 +278,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string>.</string>
              </property>
              <property name="icon">
               <iconset>
@@ -371,7 +298,7 @@
            <item row="5" column="0">
             <widget class="QPushButton" name="onebtn">
              <property name="text">
-              <string/>
+              <string>1</string>
              </property>
              <property name="icon">
               <iconset>
@@ -385,7 +312,7 @@
            <item row="1" column="1">
             <widget class="QPushButton" name="divisinbtn">
              <property name="text">
-              <string/>
+              <string>/</string>
              </property>
              <property name="icon">
               <iconset>
@@ -399,7 +326,7 @@
            <item row="5" column="3">
             <widget class="QPushButton" name="plusbtn">
              <property name="text">
-              <string/>
+              <string>+</string>
              </property>
              <property name="icon">
               <iconset>
@@ -413,7 +340,7 @@
            <item row="4" column="2">
             <widget class="QPushButton" name="sixbtn">
              <property name="text">
-              <string/>
+              <string>6</string>
              </property>
              <property name="icon">
               <iconset>
@@ -429,6 +356,9 @@
              <property name="text">
               <string>m+</string>
              </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="0" column="1">
@@ -436,12 +366,15 @@
              <property name="text">
               <string>mr</string>
              </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="6" column="3">
             <widget class="QPushButton" name="equalbtn">
              <property name="text">
-              <string/>
+              <string>=</string>
              </property>
              <property name="icon">
               <iconset>
@@ -457,12 +390,15 @@
              <property name="text">
               <string>mc</string>
              </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="4" column="1">
             <widget class="QPushButton" name="fivebtn">
              <property name="text">
-              <string/>
+              <string>5</string>
              </property>
              <property name="icon">
               <iconset>
@@ -493,7 +429,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string>(</string>
                </property>
                <property name="icon">
                 <iconset>
@@ -519,7 +455,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string>)</string>
                </property>
                <property name="icon">
                 <iconset>
@@ -540,7 +476,7 @@
       <item>
        <widget class="QPushButton" name="stepbystepboxbtn">
         <property name="text">
-         <string/>
+         <string>step by step</string>
         </property>
         <property name="icon">
          <iconset>
@@ -573,18 +509,97 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="advanceboxbtn">
+     <widget class="QPushButton" name="optionboxbtn">
       <property name="text">
        <string/>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>C:/Users/Matin/Desktop/down-arrow.png</normaloff>C:/Users/Matin/Desktop/down-arrow.png</iconset>
+        <normaloff>icon/down-arrow.png</normaloff>icon/down-arrow.png</iconset>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="treepte"/>
+     <widget class="QGroupBox" name="grpbox_option">
+      <property name="title">
+       <string>option</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="1">
+        <widget class="QPushButton" name="opttwobtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="opttenbtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="opteightbtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="optfourbtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="optsixbtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="optsevenbtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="optninebtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="optthreebtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="optonebtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="optfivebtn">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
